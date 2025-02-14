@@ -3,7 +3,28 @@ import numpy as np
 CBRT_UNITY_IM = np.sqrt(3)/2 * 1j
 
 
-def quadsolve(a, b, c):
+def quadsolve(
+              a: float,
+              b: float,
+              c: float,
+          ) -> tuple[float,float]:
+    """
+    Solves the roots of a quadratic equation.
+    Uses the quadratice formula. Results must be real.
+    Parameters
+    _________
+     a
+        :math:`x^2` coefficient.
+     b
+        :math:`x` coefficient.
+     c
+        Constant value.
+
+    Returns
+    -------
+    tuple[float, float]
+        Positive and negative roots of quadratic.      
+    """
     det = b**2 - (4*a*c)
 
     return ((-b + np.sqrt(det)) / (2*a),
